@@ -1,0 +1,12 @@
+services:
+  backend:
+    build:
+      context: ./src/backend
+    ports:
+      - "8000:8000"
+    environment:
+      FLASK_APP: app
+      FLASK_ENV: development
+      PYTHONPATH: /backend/app  # Helps with module resolution
+    env_file:
+      - .env
