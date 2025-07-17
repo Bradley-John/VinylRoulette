@@ -1,6 +1,7 @@
 import os
 import random
 import requests
+from models import Record
 
 DISCOGS_USER_AGENT = os.environ.get("DISCOGS_USER_AGENT")
 DISCOGS_API_BASE = os.environ.get("DISCOGS_API_BASE")
@@ -27,14 +28,17 @@ def get_random_album(query=None, genre=None,  style=None, country=None, year=Non
     if not results:
         return {'error': 'No albums found'}
 
-    record = random.choice(results)
-    return {
-        'title': record.get('title'),
-        'artist': record.get('artist'),
-        'year': record.get('year'),
-        'genre': genre,
-        'cover_image': record.get('cover_image'),
-        'url': DISCOGS_URL + record.get('uri'),
-    }
+    raw = random.choice(results)
+
+    record = Record(
+        title=raw.get('title'),
+        artist=raw.get('artist'),
+        year=raw.get('year'),
+        genre=genre,
+        cover_image=raw.get('cover_image'),
+        link= DISCOGS_URL + raw.get('uri'),
+    )
+
+    return record
 
 print(get_random_album("Rock"))
