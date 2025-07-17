@@ -40,5 +40,3 @@ def get_random_album(query=None, genre=None,  style=None, country=None, year=Non
     )
 
     return record
-
-print(get_random_album("Rock"))
