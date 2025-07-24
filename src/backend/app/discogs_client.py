@@ -1,6 +1,8 @@
 import os
 import random
+
 import requests
+
 from models import Record
 
 DISCOGS_USER_AGENT = os.environ.get("DISCOGS_USER_AGENT")

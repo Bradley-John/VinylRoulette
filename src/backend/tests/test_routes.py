@@ -1,6 +1,9 @@
-import pytest
-from src.backend.app.app import app
 from unittest.mock import patch
+
+import pytest
+
+from src.backend.app.app import app
+
 
 @pytest.fixture
 def client():

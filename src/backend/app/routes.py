@@ -1,4 +1,5 @@
-from flask import Blueprint, request, jsonify
+from flask import Blueprint, jsonify
+
 from discogs_client import get_random_album
 
 api = Blueprint('api', __name__)
