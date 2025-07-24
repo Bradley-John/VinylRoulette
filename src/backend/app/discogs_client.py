@@ -3,7 +3,7 @@ import random
 
 import requests
 
-from models import Record
+from .models import Record
 
 DISCOGS_USER_AGENT = os.environ.get("DISCOGS_USER_AGENT")
 DISCOGS_API_BASE = os.environ.get("DISCOGS_API_BASE")
