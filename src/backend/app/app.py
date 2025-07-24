@@ -8,4 +8,5 @@ def create_app():
     app.register_blueprint(api)
     return app
 
+
 app = create_app()
