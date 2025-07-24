@@ -32,6 +32,5 @@ jobs:
         flake8 src/backend/app
 
     - name: Run tests
-      env:
-        PYTHONPATH: src
-      run: pytest src/backend/tests
+      run: PYTHONPATH=src pytest src/backend/tests
+
