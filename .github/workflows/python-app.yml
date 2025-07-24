@@ -33,4 +33,5 @@ jobs:
 
     - name: Run tests
       run: |
+        PYTHONPATH=src
         pytest src/backend/tests
